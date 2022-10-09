@@ -10,7 +10,7 @@ import { addColumn, removeColumn, moveColumn } from '../../actions/columns';
 import ColumnSettingsContainer from './containers/column_settings_container';
 import { connectPublicStream } from '../../actions/streaming';
 import { Helmet } from 'react-helmet';
-import { title } from 'mastodon/initial_state';
+import DismissableBanner from 'mastodon/components/dismissable_banner';
 
 const messages = defineMessages({
   title: { id: 'column.public', defaultMessage: 'Federated timeline' },
@@ -138,6 +138,10 @@ class PublicTimeline extends React.PureComponent {
           <ColumnSettingsContainer columnId={columnId} />
         </ColumnHeader>
 
+        <DismissableBanner id='public_timeline'>
+          <FormattedMessage id='dismissable_banner.public_timeline' defaultMessage='These are the most recent public posts from people on this and other servers of the decentralized network that this server knows about.' />
+        </DismissableBanner>
+
         <StatusListContainer
           timelineId={`public${onlyRemote ? ':remote' : ''}${onlyMedia ? ':media' : ''}`}
           onLoadMore={this.handleLoadMore}
@@ -148,7 +152,7 @@ class PublicTimeline extends React.PureComponent {
         />
 
         <Helmet>
-          <title>{intl.formatMessage(messages.title)} - {title}</title>
+          <title>{intl.formatMessage(messages.title)}</title>
         </Helmet>
       </Column>
     );

@@ -1645,13 +1645,6 @@ Rails/FilePath:
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
 
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-Rails/FindById:
-  Exclude:
-    - 'app/controllers/api/v1/notifications_controller.rb'
-    - 'app/controllers/media_controller.rb'
-
 # Offense count: 6
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
@@ -1916,13 +1909,6 @@ Rails/UnusedIgnoredColumns:
     - 'app/models/status_edit.rb'
     - 'app/models/user.rb'
 
-# Offense count: 2
-# This cop supports unsafe autocorrection (--autocorrect-all).
-Rails/WhereEquals:
-  Exclude:
-    - 'app/models/announcement.rb'
-    - 'app/models/status.rb'
-
 # Offense count: 61
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
@@ -1962,13 +1948,6 @@ Rails/WhereExists:
     - 'spec/services/post_status_service_spec.rb'
     - 'spec/services/purge_domain_service_spec.rb'
     - 'spec/services/unallow_domain_service_spec.rb'
-
-# Offense count: 3
-# This cop supports unsafe autocorrection (--autocorrect-all).
-Security/IoMethods:
-  Exclude:
-    - 'spec/controllers/admin/export_domain_allows_controller_spec.rb'
-    - 'spec/controllers/admin/export_domain_blocks_controller_spec.rb'
 
 # Offense count: 5
 # This cop supports unsafe autocorrection (--autocorrect-all).

@@ -39,7 +39,7 @@ end
 gem 'net-ldap', '~> 0.17'
 gem 'omniauth-cas', '~> 2.0'
 gem 'omniauth-saml', '~> 1.10'
-gem 'omniauth_openid_connect', '~> 0.6.0'
+gem 'omniauth_openid_connect', '~> 0.6.1'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
@@ -104,6 +104,7 @@ group :development, :test do
   gem 'fuubar', '~> 2.5'
   gem 'i18n-tasks', '~> 1.0', require: false
   gem 'rspec-rails', '~> 6.0'
+  gem 'rspec_chunked', '~> 0.6'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false

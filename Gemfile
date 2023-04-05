@@ -17,7 +17,7 @@ gem 'makara', '~> 0.5'
 gem 'pghero'
 gem 'dotenv-rails', '~> 2.8'
 
-gem 'aws-sdk-s3', '~> 1.119', require: false
+gem 'aws-sdk-s3', '~> 1.120', require: false
 gem 'fog-core', '<= 2.4.0'
 gem 'fog-openstack', '~> 0.3', require: false
 gem 'kt-paperclip', '~> 7.1', github: 'kreeti/kt-paperclip', ref: '11abf222dc31bff71160a1d138b445214f434b2b'
@@ -118,7 +118,7 @@ group :production, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 3.38'
+  gem 'capybara', '~> 3.39'
   gem 'climate_control'
   gem 'faker', '~> 3.1'
   gem 'json-schema', '~> 3.0'

@@ -1203,16 +1203,6 @@ Rails/BulkChangeTable:
     - 'db/migrate/20220303000827_add_ordered_media_attachment_ids_to_status_edits.rb'
     - 'db/migrate/20220824164433_add_human_identifier_to_admin_action_logs.rb'
 
-# This cop supports unsafe autocorrection (--autocorrect-all).
-Rails/CompactBlank:
-  Exclude:
-    - 'app/helpers/application_helper.rb'
-    - 'app/helpers/statuses_helper.rb'
-    - 'app/models/concerns/attachmentable.rb'
-    - 'app/models/poll.rb'
-    - 'app/services/import_service.rb'
-    - 'config/initializers/paperclip.rb'
-
 # Configuration parameters: Include.
 # Include: db/migrate/*.rb
 Rails/CreateTableWithTimestamps:
@@ -1335,31 +1325,10 @@ Rails/HasManyOrHasOneDependent:
     - 'app/models/user.rb'
     - 'app/models/web/push_subscription.rb'
 
-# Configuration parameters: Include.
-# Include: spec/**/*.rb, test/**/*.rb
-Rails/I18nLocaleAssignment:
-  Exclude:
-    - 'spec/controllers/auth/registrations_controller_spec.rb'
-    - 'spec/helpers/application_helper_spec.rb'
-    - 'spec/requests/localization_spec.rb'
-
 Rails/I18nLocaleTexts:
   Exclude:
     - 'lib/tasks/mastodon.rake'
     - 'spec/helpers/flashes_helper_spec.rb'
-
-# Configuration parameters: IgnoreScopes, Include.
-# Include: app/models/**/*.rb
-Rails/InverseOf:
-  Exclude:
-    - 'app/models/appeal.rb'
-    - 'app/models/concerns/account_interactions.rb'
-    - 'app/models/custom_emoji.rb'
-    - 'app/models/domain_block.rb'
-    - 'app/models/follow_recommendation.rb'
-    - 'app/models/instance.rb'
-    - 'app/models/notification.rb'
-    - 'app/models/status.rb'
 
 # Configuration parameters: Include.
 # Include: app/controllers/**/*.rb, app/mailers/**/*.rb

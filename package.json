@@ -183,6 +183,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-formatjs": "^4.9.0",
     "eslint-plugin-import": "~2.27.5",
+    "eslint-plugin-jsdoc": "^43.1.1",
     "eslint-plugin-jsx-a11y": "~6.7.1",
     "eslint-plugin-promise": "~6.1.1",
     "eslint-plugin-react": "~7.32.2",
@@ -211,6 +212,7 @@
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
+    "Capfile|Gemfile|*.{rb,ruby,ru,rake}": "bundle exec rubocop -a",
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{css,scss}": "stylelint --fix"
   }

@@ -7,22 +7,22 @@
 ARG TARGETPLATFORM=${TARGETPLATFORM}
 ARG BUILDPLATFORM=${BUILDPLATFORM}
 
-# Ruby image to use for base image, change with [--build-arg RUBY_VERSION="3.3.1"]
-ARG RUBY_VERSION="3.3.1"
+# Ruby image to use for base image, change with [--build-arg RUBY_VERSION="3.3.x"]
+ARG RUBY_VERSION="3.3.2"
 # # Node version to use in base image, change with [--build-arg NODE_MAJOR_VERSION="20"]
 ARG NODE_MAJOR_VERSION="20"
 # Debian image to use for base image, change with [--build-arg DEBIAN_VERSION="bookworm"]
 ARG DEBIAN_VERSION="bookworm"
 # Node image to use for base image based on combined variables (ex: 20-bookworm-slim)
 FROM docker.io/node:${NODE_MAJOR_VERSION}-${DEBIAN_VERSION}-slim as node
-# Ruby image to use for base image based on combined variables (ex: 3.3.1-slim-bookworm)
+# Ruby image to use for base image based on combined variables (ex: 3.3.x-slim-bookworm)
 FROM docker.io/ruby:${RUBY_VERSION}-slim-${DEBIAN_VERSION} as ruby
 
 # Resulting version string is vX.X.X-MASTODON_VERSION_PRERELEASE+MASTODON_VERSION_METADATA
 # Example: v4.2.0-nightly.2023.11.09+something
 # Overwrite existence of 'alpha.0' in version.rb [--build-arg MASTODON_VERSION_PRERELEASE="nightly.2023.11.09"]
 ARG MASTODON_VERSION_PRERELEASE=""
-# Append build metadata or fork information to version.rb [--build-arg MASTODON_VERSION_METADATA="something"]
+# Append build metadata or fork information to version.rb [--build-arg MASTODON_VERSION_METADATA="pr-12345"]
 ARG MASTODON_VERSION_METADATA=""
 
 # Allow Ruby on Rails to serve static files
@@ -43,6 +43,8 @@ ENV \
 # Apply Mastodon version information
   MASTODON_VERSION_PRERELEASE="${MASTODON_VERSION_PRERELEASE}" \
   MASTODON_VERSION_METADATA="${MASTODON_VERSION_METADATA}" \
+# Enable libvips
+  MASTODON_USE_LIBVIPS=true \
 # Apply Mastodon static files and YJIT options
   RAILS_SERVE_STATIC_FILES=${RAILS_SERVE_STATIC_FILES} \
   RUBY_YJIT_ENABLE=${RUBY_YJIT_ENABLE} \
@@ -97,7 +99,7 @@ RUN \
     curl \
     ffmpeg \
     file \
-    imagemagick \
+    libvips42 \
     libjemalloc2 \
     patchelf \
     procps \

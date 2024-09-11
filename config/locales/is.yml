@@ -25,7 +25,7 @@ is:
   admin:
     account_actions:
       action: Framkvæma aðgerð
-      already_silenced: Þessi aðgangur hefur þegar verið þaggaður.
+      already_silenced: Þessi aðgangur hefur þegar verið takmarkaður.
       already_suspended: Þessi aðgangur hefur þegar verið settur í frysti.
       title: Framkvæma umsjónaraðgerð á %{acct}
     account_moderation_notes:
@@ -1165,6 +1165,12 @@ is:
       view_strikes: Skoða fyrri bönn notandaaðgangsins þíns
     too_fast: Innfyllingarform sent inn of hratt, prófaðu aftur.
     use_security_key: Nota öryggislykil
+  author_attribution:
+    example_title: Sýnitexti
+    hint_html: Stýrðu hvernig framlög þín birtast þegar tenglum er deilt á Mastodon.
+    more_from_html: Meira frá %{name}
+    s_blog: Bloggsvæði hjá %{name}
+    title: Framlag höfundar
   challenge:
     confirm: Halda áfram
     hint_html: "<strong>Ábending:</strong> Við munum ekki spyrja þig um lykilorðið aftur næstu klukkustundina."
@@ -1239,8 +1245,6 @@ is:
       your_appeal_approved: Áfrýjun þín hefur verið samþykkt
       your_appeal_pending: Þú hefur sent inn áfrýjun
       your_appeal_rejected: Áfrýjun þinni hefur verið hafnað
-  domain_validator:
-    invalid_domain: er ekki leyfilegt nafn á léni
   edit_profile:
     basic_information: Grunnupplýsingar
     hint_html: "<strong>Sérsníddu hvað fólk sér á opinbera notandasniðinu þínu og næst færslunum þínum.</strong> Annað fólk er líklegra til að fylgjast með þér og eiga í samskiptum við þig ef þú fyllir út notandasniðið og setur auðkennismynd."
@@ -1955,6 +1959,7 @@ is:
     instructions_html: Afritaðu og límdu kóðann hér fyrir neðan inn í HTML-kóða vefsvæðisins þíns. Bættu síðan slóð vefsvæðisins þíns inn í einn af auka-reitunum í flipanum "Breyta notandasniði" og vistaðu síðan breytingarnar.
     verification: Sannprófun
     verified_links: Staðfestu tenglarnir þínir
+    website_verification: Staðfesting vefsvæðis
   webauthn_credentials:
     add: Bæta við nýjum öryggislykli
     create:

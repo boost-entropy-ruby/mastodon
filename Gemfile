@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '>= 3.2.0'
+ruby '>= 3.2.0', '< 3.5'
 
 gem 'propshaft'
 gem 'puma', '~> 6.3'
 gem 'rack', '~> 2.2.7'
-gem 'rails', '~> 7.2.0'
+gem 'rails', '~> 8.0'
 gem 'thor', '~> 1.2'
 
 gem 'dotenv'
@@ -73,7 +73,7 @@ gem 'public_suffix', '~> 6.0'
 gem 'pundit', '~> 2.3'
 gem 'rack-attack', '~> 6.6'
 gem 'rack-cors', '~> 2.0', require: 'rack/cors'
-gem 'rails-i18n', '~> 7.0'
+gem 'rails-i18n', '~> 8.0'
 gem 'redcarpet', '~> 3.6'
 gem 'redis', '~> 4.5', require: ['redis', 'redis/connection/hiredis']
 gem 'redis-namespace', '~> 1.10'
@@ -222,7 +222,7 @@ gem 'concurrent-ruby', require: false
 gem 'connection_pool', require: false
 gem 'xorcist', '~> 1.1'
 
-gem 'net-http', '~> 0.5.0'
+gem 'net-http', '~> 0.6.0'
 gem 'rubyzip', '~> 2.3'
 
 gem 'hcaptcha', '~> 7.1'

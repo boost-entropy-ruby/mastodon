@@ -15,7 +15,7 @@ export const makeGetStatus = () => {
       (state, { id }) => state.getIn(['accounts', state.getIn(['statuses', id, 'account'])]),
       (state, { id }) => state.getIn(['accounts', state.getIn(['statuses', state.getIn(['statuses', id, 'reblog']), 'account'])]),
       getFilters,
-      (_, { contextType }) => contextType === 'detailed',
+      (_, { contextType }) => ['detailed', 'bookmarks', 'favourites'].includes(contextType),
     ],
 
     (statusBase, statusReblog, accountBase, accountReblog, filters, warnInsteadOfHide) => {
@@ -59,28 +59,6 @@ export const makeGetPictureInPicture = () => {
     available,
   }));
 };
-
-const ALERT_DEFAULTS = {
-  dismissAfter: 5000,
-  style: false,
-};
-
-const formatIfNeeded = (intl, message, values) => {
-  if (typeof message === 'object') {
-    return intl.formatMessage(message, values);
-  }
-
-  return message;
-};
-
-export const getAlerts = createSelector([state => state.get('alerts'), (_, { intl }) => intl], (alerts, intl) =>
-  alerts.map(item => ({
-    ...ALERT_DEFAULTS,
-    ...item,
-    action: formatIfNeeded(intl, item.action, item.values),
-    title: formatIfNeeded(intl, item.title, item.values),
-    message: formatIfNeeded(intl, item.message, item.values),
-  })).toArray());
 
 export const makeGetNotification = () => createSelector([
   (_, base)             => base,
